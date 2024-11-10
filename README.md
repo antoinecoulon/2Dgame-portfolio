@@ -4,7 +4,7 @@ Un portfolio créé en jeu vidéo 2D.
 
 ### CREDITS
 
-J'ai pu réaliser ce projet grâce au tutoriel vidéo de la plateforme freeCodeCamp (lien).
+J'ai pu réaliser ce projet grâce au tutoriel vidéo réalisé par @JSLegendDev et trouvé sur la plateforme freeCodeCamp.
 
 ### DESCRIPTION
 
@@ -12,4 +12,7 @@ En pleine reconversion professionnelle vers le dev, je n'ai pas encore de portfo
 
 ### TECHNOS
 
-Ce projet est réalisé en JavaScript avec sa librairie Kaboom.js
+JavaScript, Kaboom.js
+HTML, CSS
+'Tiled' Software
+
