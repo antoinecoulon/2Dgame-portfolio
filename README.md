@@ -5,6 +5,7 @@ Un portfolio créé en jeu vidéo 2D.
 ### CREDITS
 
 J'ai pu réaliser ce projet grâce au tutoriel vidéo réalisé par @JSLegendDev et trouvé sur la plateforme freeCodeCamp.
+Link: https://www.youtube.com/watch?v=wy_fSStEgMs&t=499s&ab_channel=freeCodeCamp.org
 
 ### DESCRIPTION
 
