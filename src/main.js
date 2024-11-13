@@ -1,3 +1,4 @@
+import { SCALE_FACTOR } from "./constants";
 import { k } from "./kaboomCtx";
 
 // Charger les sprites loadSprite( name , file , { properties to slice the image }), les fichiers de 'public' sont directement accessible grâce à Vite
@@ -23,7 +24,15 @@ k.setBackground(k.Color.fromHex("#311047"));
  * Function : what happening in the scene...
  * .scene([name], [function]) 
  */
-k.scene("main", () => {
+k.scene("main", async () => {
+    const mapData = await(await fetch("./map.json")).json();
+    const layers = mapData.layers;
+
+    const map = k.make([
+        k.sprite("map"),
+        k.pos(0),
+        k.scale(SCALE_FACTOR),
+    ]);
 
 });
 
