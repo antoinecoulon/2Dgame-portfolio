@@ -17,3 +17,15 @@ k.loadSprite("spritesheet", "./spritesheet.png", {
 k.loadSprite("map", "./map.png");
 
 k.setBackground(k.Color.fromHex("#311047"));
+
+/**
+ * Setup the first scene (for this project the first and only).
+ * Function : what happening in the scene...
+ * .scene([name], [function]) 
+ */
+k.scene("main", () => {
+
+});
+
+// .go(scene name) which scene go with the app launch, using main.js as entrance point
+k.go("main");
