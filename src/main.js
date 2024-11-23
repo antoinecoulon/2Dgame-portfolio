@@ -55,6 +55,28 @@ k.scene("main", async () => {
         "player"
     ]);
 
+    for (const layer of layers) {
+        if (layer.name === "boundaries") {              // if we are on the 'boundaries' layer (map.json)
+            for (const boundary of layer.objects) {     // the 'objects' property contains an array with all the objects of the layer
+                map.add([                               // add a child map object
+                    k.area({
+                        shape: new k.Rect(k.vec2(0), boundary.width, boundary.height),
+                    }),
+                    k.body({ isStatic: true }),
+                    k.pos(boundary.x, boundary.y),
+                    boundary.name,
+                ]);
+
+                if (boundary.name) {
+                    player.onCollide(boundary.name, () => {
+                        player.isInDialogue = true;
+                        //TODO
+                    })
+                }
+            }
+        }
+    }
+
 });
 
 // .go([scene name]) which scene go with the app launch, using main.js as entrance point
