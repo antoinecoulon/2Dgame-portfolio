@@ -107,7 +107,50 @@ k.scene("main", async () => {
 
         const worldMousePos = k.toWorld(k.mousePos());
         player.moveTo(worldMousePos, player.speed);
-    })
+
+        const mouseAngle = player.pos.angle(worldMousePos);
+
+        const lowerBound = 50;
+        const upperBound = 125;
+
+        // UP animation
+        if (
+            mouseAngle > lowerBound &&
+            mouseAngle < upperBound &&
+            player.curAnim() !== "walk-up"
+        ) {
+            player.play("walk-up");
+            player.direction = "up";
+            return;
+        }
+
+        //DOWN animation
+        if (
+            mouseAngle < -lowerBound &&
+            mouseAngle > -upperBound &&
+            player.curAnim() !== "walk-down"
+        ) {
+            player.play("walk-down");
+            player.direction = "down";
+            return;
+        }
+
+        //RIGHT animation
+        if (Math.abs(mouseAngle) > upperBound) {
+            player.flipX = false;
+            if (player.curAnim() !== "walk-side") player.play("walk-side");
+            player.direction = "right";
+            return;
+        }
+        
+        //LEFT animation
+        if (Math.abs(mouseAngle) < lowerBound) {
+            player.flipX = true;
+            if (player.curAnim() !== "walk-side") player.play("walk-side");
+            player.direction = "left";
+            return;
+        }
+    });
 
 });
 
