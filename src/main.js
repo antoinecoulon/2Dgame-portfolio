@@ -33,7 +33,7 @@ k.scene("main", async () => {
     const mapData = await(await fetch("./map.json")).json();
     const layers = mapData.layers;
 
-    const map = k.make([            // .make([]) create a (kaboom) object NOT displaying it
+    const map = k.add([            // .make([]) create a (kaboom) object NOT displaying it
         k.sprite("map"),            // from .loadSprite() (l.18)
         k.pos(0),                   // position where the object is drawn
         k.scale(SCALE_FACTOR)      // the scale of the object (here x4, see ./constants)
@@ -42,7 +42,7 @@ k.scene("main", async () => {
     const player = k.make([
         k.sprite("spritesheet", { anim: "idle-down" }), // anim parameter is default animation of the sprite
         k.area({                                        // .area({ [parameters] }) : hitbox of this player
-            shape: new k.Rect(vec2(0, 3), 10, 10),      // plays with hitbox position X and Y values, and the width, height values
+            shape: new k.Rect(k.vec2(0, 3), 10, 10),      // plays with hitbox position X and Y values, and the width, height values
         }),
         k.body(),                                       // activate collision for this object
         k.anchor("center"),                             // X, Y coordinates from where the object is drawn
@@ -72,7 +72,7 @@ k.scene("main", async () => {
                     player.onCollide(boundary.name, () => {
                         player.isInDialogue = true;
                         displayDialogue("TODO text to display", () => (player.isInDialogue = false));
-                    })
+                    });
                 }
             }
             continue;
@@ -92,7 +92,9 @@ k.scene("main", async () => {
         }
     }
 
-    
+    k.onUpdate(() => {
+        k.camPos(player.pos.x, player.pos.y + 100);
+    });
 
 });
 
