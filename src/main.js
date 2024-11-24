@@ -152,6 +152,19 @@ k.scene("main", async () => {
         }
     });
 
+    k.onMouseRelease(() => {
+        if (player.direction === "down") {
+            player.play("idle-down");
+            return;
+        }
+        if (player.direction === "up") {
+            player.play("idle-up");
+            return;
+        }
+
+        player.play("idle-side");
+    });
+
 });
 
 // .go([scene name]) which scene go with the app launch, using main.js as entrance point
