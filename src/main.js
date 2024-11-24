@@ -1,5 +1,6 @@
 import { SCALE_FACTOR } from "./constants";
 import { k } from "./kaboomCtx";
+import { displayDialogue } from "./utils";
 
 /**
  * Charger les sprites loadSprite( name , file , { properties to slice the image }), les fichiers de 'public' sont directement accessible grâce à Vite
@@ -70,12 +71,28 @@ k.scene("main", async () => {
                 if (boundary.name) {
                     player.onCollide(boundary.name, () => {
                         player.isInDialogue = true;
-                        //TODO
+                        displayDialogue("TODO text to display", () => (player.isInDialogue = false));
                     })
+                }
+            }
+            continue;
+        }
+
+        if (layer.name === "spawnpoints") {
+            for (const entity of layer.objects) {
+                if (entity.name === "player") {
+                    player.pos = k.vec2( 
+                        (map.pos.x + entity.x) * SCALE_FACTOR,
+                        (map.pos.y + entity.y) * SCALE_FACTOR
+                    );
+                    k.add(player);
+                    continue;
                 }
             }
         }
     }
+
+    
 
 });
 
