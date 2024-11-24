@@ -1,6 +1,6 @@
 import { SCALE_FACTOR } from "./constants";
 import { k } from "./kaboomCtx";
-import { displayDialogue } from "./utils";
+import { displayDialogue, setCamScale } from "./utils";
 
 /**
  * Charger les sprites loadSprite( name , file , { properties to slice the image }), les fichiers de 'public' sont directement accessible grâce à Vite
@@ -91,6 +91,12 @@ k.scene("main", async () => {
             }
         }
     }
+
+    setCamScale(k);
+
+    k.onResize(() => {
+        setCamScale(k);
+    })
 
     k.onUpdate(() => {
         k.camPos(player.pos.x, player.pos.y + 100);
