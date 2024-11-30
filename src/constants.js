@@ -5,7 +5,7 @@ export const dialogueData = {
     tv: '',                 // ...
     bed: '',                // ...
     resume: '',             // lien vers CV
-    projetcs: '',           // lien vers GitHub
+    projetcs: 'Vous pourrez trouver mes projets personnels sur mon <a href="https://https://github.com/antoinecoulon target="_blank">">GitHub</a> ! N\'hésitez pas à aller voir et à me dire ce que vous en pensez.',           // lien vers GitHub
     'cs-degree': '',        // diplome
     library: '',            // a propos de mes lectures
     'sofa-table': '',       // take a break 
