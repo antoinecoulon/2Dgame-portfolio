@@ -8,8 +8,10 @@ export function displayDialogue(text, onDisplayEnd) {
     let currentText = "";
     const intervalRef = setInterval(() => {
         if (index < text.length) {
-            currentText =+ text[index];
+            console.log("currentText:" + currentText);
+            currentText += text[index];
             dialogue.innerHTML = currentText;
+            console.log("dialogue:" + dialogue);
             index++;
             return;
         }

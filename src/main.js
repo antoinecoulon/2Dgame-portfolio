@@ -69,10 +69,17 @@ k.scene("main", async () => {
                 ]);
 
                 if (boundary.name) {
+                    // console.log(`Check for: ${boundary.name}`); //ToDo: enlever vérification
+                    // if (dialogueData[boundary.name]) { // ajouté pour verif
+                    //     console.log(`Found dialogue: ${dialogueData[boundary.name]}`); // verif
                     player.onCollide(boundary.name, () => {
                         player.isInDialogue = true;
                         displayDialogue(dialogueData[boundary.name], () => (player.isInDialogue = false));
                     });
+                // } else {
+                //     console.warn(`Dialogue for '${boundary.name}' not found in dialogueData`);
+                
+                // }
                 }
             }
             continue;
