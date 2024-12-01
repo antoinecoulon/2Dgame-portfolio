@@ -9,5 +9,5 @@ export const dialogueData = {
     'cs-degree': 'En 2015, j\'ai obtenu un BTS SIO (Services Informatiques aux Organisations) et je suis actuellement en train de passer un Titre professionnel "Concepteur Développeur d\'Applications".',
     library: 'J\'aime énormément lire ! Je suis aussi issu d\'une formation littéraire.',
     'sofa-table': 'En général, ce sont mes chats qui se trouvent là...',
-    exit: 'J\'espère que cette visite vous a plu, et j\'ai hâte de vous revoir! See you soon!'
+    exit: 'Si vous souhaitez partir, vous pouvez simplement fermer cet onglet de votr navigateur. J\'espère que cette visite vous a plu, et j\'ai hâte de vous revoir! See you soon!'
 };
